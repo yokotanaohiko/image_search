@@ -1,1 +1,3 @@
-# image_search
+# Image Search
+
+Application to use instagram api
