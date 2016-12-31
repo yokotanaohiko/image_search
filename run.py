@@ -9,6 +9,13 @@ app = Flask(__name__)
 def hello():
     return 'Hello World'
 
+@app.route('/callback')
+def callback():
+    return 'Hello World'
+
+@app.route('/privacy_policy')
+def privacy_policy():
+    return 'Hello World'
 
 if __name__ == '__main__':
     port = os.environ.get('PORT', 5000)
