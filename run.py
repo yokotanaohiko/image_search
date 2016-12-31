@@ -2,7 +2,8 @@
 # -*- coding:utf-8 -*-
 
 import os
-from flask import Flask
+from flask import Flask, request, make_response
+import logging
 app = Flask(__name__)
 
 @app.route('/')
@@ -11,11 +12,15 @@ def hello():
 
 @app.route('/callback')
 def callback():
-    return 'Hello World'
+    code = request.args.get('code')
+    logging.info(code) 
+    return make_response('OK', 200)
 
 @app.route('/privacy_policy')
 def privacy_policy():
-    return 'Hello World'
+    code = request.args.get('code')
+    logging.info(code) 
+    return make_response('OK', 200)
 
 if __name__ == '__main__':
     port = os.environ.get('PORT', 5000)
